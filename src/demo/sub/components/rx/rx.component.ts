@@ -1,24 +1,6 @@
-# NgxSpeechRecognition
-
-## Demo
-
-![demo](./speech.gif)
-
-Run `ng serve` for a demo server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## See
-
-[Support Browsers](https://caniuse.com/#feat=speech-recognition)
-
-[Web Speech API -- MDN](https://developer.mozilla.org/ja/docs/Web/API/Web_Speech_API)
-
-## API
-
-### RxSpeechRecognitionService
-
-```typescript
 import { Component } from '@angular/core';
-import { RxSpeechRecognitionService } from '@kamiazya/ngx-speech-recognition';
+
+import { RxSpeechRecognitionService } from 'lib/speech-recognition/service';
 
 @Component({
   selector: 'demo-rx',
@@ -35,7 +17,6 @@ export class RxComponent {
   constructor(
     private service: RxSpeechRecognitionService,
   ) { }
-
   listen() {
     this.service
       .listen()
@@ -47,4 +28,3 @@ export class RxComponent {
   }
 
 }
-```

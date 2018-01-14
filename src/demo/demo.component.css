@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+}
+
+:host {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+}
+
+:host * {
+  border: solid 1px black;
+}

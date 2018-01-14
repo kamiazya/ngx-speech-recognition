@@ -7,10 +7,15 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "noEmitHelpers": true,
+    "importHelpers": true,
     "target": "es5",
     "typeRoots": [
       "node_modules/@types"
     ],
+    "baseUrl": "./src",
+    "sourceRoot": "./src",
+    "mapRoot": "./src",
     "lib": [
       "es2017",
       "dom"
