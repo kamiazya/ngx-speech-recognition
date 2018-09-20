@@ -1,4 +1,3 @@
-import { Observable } from 'rxjs/Observable';
 import { Injectable, ApplicationRef, Inject, Optional } from '@angular/core';
 
 import {
@@ -29,6 +28,7 @@ import {
   SpeechRecognitionCommon,
 } from './speech-recognition.common';
 
+// @dynamic
 @Injectable()
 /**
  *

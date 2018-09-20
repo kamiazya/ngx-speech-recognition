@@ -1,11 +1,10 @@
-import { Observable } from 'rxjs/Observable';
-import { UnaryFunction } from 'rxjs/interfaces';
-import { Subject } from 'rxjs/Subject';
-import { Injectable, ApplicationRef, Inject, Optional } from '@angular/core';
-
-import { filter } from 'rxjs/operators/filter';
-import { map } from 'rxjs/operators/map';
 import { pipe } from 'rxjs/util/pipe';
+import { UnaryFunction } from 'rxjs/interfaces';
+import { Observable } from 'rxjs/observable';
+import { Subject } from 'rxjs/Subject';
+import { filter, map } from 'rxjs/operators';
+
+import { Injectable, ApplicationRef, Inject, Optional } from '@angular/core';
 
 import {
   SpeechRecognitionGrammars,
@@ -14,17 +13,6 @@ import {
   SpeechRecognitionInterimResults,
   SpeechRecognitionMaxAlternatives,
   SpeechRecognitionServiceUri,
-  SpeechRecognitionAudiostartHandler,
-  SpeechRecognitionSoundstartHandler,
-  SpeechRecognitionSpeechstartHandler,
-  SpeechRecognitionSpeechendHandler,
-  SpeechRecognitionSoundendHandler,
-  SpeechRecognitionAudioendHandler,
-  SpeechRecognitionResultHandler,
-  SpeechRecognitionNomatchHandler,
-  SpeechRecognitionErrorHandler,
-  SpeechRecognitionStartHandler,
-  SpeechRecognitionEndHandler,
 } from './speech-recognition.token';
 
 import {
@@ -36,25 +24,23 @@ import {
   SpeechRecognitionCommon,
 } from './speech-recognition.common';
 
+const onType = (type: string) => {
+  return filter((e: SpeechRecognitionServiceEvent) => (e.type === type));
+};
+
+export const resultList: UnaryFunction<Observable<SpeechRecognitionEvent>, Observable<SpeechRecognitionResultList>> = pipe(
+  onType('result'),
+  map((e: SpeechRecognitionEvent): SpeechRecognitionResultList => e.results),
+);
 
 @Injectable()
 export class RxSpeechRecognitionService extends SpeechRecognitionCommon {
-
-  static resultList: UnaryFunction<Observable<SpeechRecognitionEvent>, Observable<SpeechRecognitionResultList>> = pipe(
-    RxSpeechRecognitionService.on('result'),
-    map((e: SpeechRecognitionEvent): SpeechRecognitionResultList => e.results)
-  );
 
   private proxy$: Subject<SpeechRecognitionServiceEvent> = new Subject();
 
 
   get $(): Observable<SpeechRecognitionServiceEvent> {
     return this.proxy$ as Observable<SpeechRecognitionServiceEvent>;
-  }
-
-
-  static on(type: string) {
-    return filter((e: SpeechRecognitionServiceEvent) => (e.type === type));
   }
 
   constructor(
