@@ -22,7 +22,10 @@ Run `ng serve` for a demo server. Navigate to `http://localhost:4200/`. The app 
 
 ```typescript
 import { Component } from '@angular/core';
-import { RxSpeechRecognitionService } from '@kamiazya/ngx-speech-recognition';
+import {
+  RxSpeechRecognitionService,
+  resultList,
+} from '@kamiazya/ngx-speech-recognition';
 
 @Component({
   selector: 'demo-rx',
@@ -43,7 +46,7 @@ export class RxComponent {
   listen() {
     this.service
       .listen()
-      .pipe(RxSpeechRecognitionService.resultList)
+      .pipe(resultList)
       .subscribe((list: SpeechRecognitionResultList) => {
         this.message = list.item(0).item(0).transcript;
         console.log('RxComponent:onresult', this.message, list);

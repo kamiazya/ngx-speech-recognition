@@ -1,11 +1,17 @@
 {
   "$schema": "./node_modules/ng-packagr/package.schema.json",
   "name": "@kamiazya/ngx-speech",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "ngPackage": {
     "src": "src",
     "lib": {
       "entryFile": "public_api.ts"
     }
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "angular",
+    "core-js",
+    "rxjs",
+    "zone.js"
+  ]
 }

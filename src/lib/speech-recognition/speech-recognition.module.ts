@@ -43,7 +43,7 @@ import { SPEECH_RECOGNITION_DEFAULT } from './speech-recognition.provider';
 export class SpeechRecognitionModule {
 
   constructor(
-    @Inject(PLATFORM_ID) private platformId: string
+    @Inject(PLATFORM_ID) platformId: string
   ) {
     if (!isPlatformBrowser(platformId)) {
       throw new Error('SpeechRecognitionModule: it run on PlatformBrowser.');

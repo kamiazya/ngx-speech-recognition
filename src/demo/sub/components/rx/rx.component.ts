@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 
-import { RxSpeechRecognitionService } from 'lib/speech-recognition/service';
+import {
+  RxSpeechRecognitionService,
+  resultList,
+} from 'lib/speech-recognition/service';
 
 @Component({
   selector: 'demo-rx',
@@ -20,7 +23,7 @@ export class RxComponent {
   listen() {
     this.service
       .listen()
-      .pipe(RxSpeechRecognitionService.resultList)
+      .pipe(resultList)
       .subscribe((list: SpeechRecognitionResultList) => {
         this.message = list.item(0).item(0).transcript;
         console.log('RxComponent:onresult', this.message, list);
