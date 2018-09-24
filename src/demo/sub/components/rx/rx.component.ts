@@ -18,8 +18,9 @@ export class RxComponent {
   message = '';
 
   constructor(
-    private service: RxSpeechRecognitionService,
+    public service: RxSpeechRecognitionService,
   ) { }
+
   listen() {
     this.service
       .listen()

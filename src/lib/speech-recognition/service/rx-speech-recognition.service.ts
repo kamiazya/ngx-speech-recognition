@@ -3,6 +3,7 @@ import { UnaryFunction } from 'rxjs/interfaces';
 import { Observable } from 'rxjs/observable';
 import { Subject } from 'rxjs/Subject';
 import { filter, map } from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 import { Injectable, ApplicationRef, Inject, Optional } from '@angular/core';
 
@@ -38,9 +39,14 @@ export class RxSpeechRecognitionService extends SpeechRecognitionCommon {
 
   private proxy$: Subject<SpeechRecognitionServiceEvent> = new Subject();
 
+  private _started$ = new BehaviorSubject<boolean>(false);
 
   get $(): Observable<SpeechRecognitionServiceEvent> {
     return this.proxy$ as Observable<SpeechRecognitionServiceEvent>;
+  }
+
+  get started$(): Observable<boolean> {
+    return this._started$ as Observable<boolean>;
   }
 
   constructor(
@@ -101,6 +107,16 @@ export class RxSpeechRecognitionService extends SpeechRecognitionCommon {
     this.maxAlternatives = this._maxAlternatives;
     this.serviceURI = this._serviceURI;
 
+    this.proxy$.subscribe((e) => {
+      switch (e.type) {
+        case 'start':
+          this._started$.next(true);
+          break;
+        case 'end':
+          this._started$.next(false);
+          break;
+      }
+    });
   }
 
   // The listen() method aims to recognize the grammar associated with the current SpeechRecognition,

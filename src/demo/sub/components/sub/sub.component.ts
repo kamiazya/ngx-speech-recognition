@@ -39,6 +39,9 @@ import {
   ],
 })
 export class SubComponent {
+
+  public started = false;
+
   public message = '';
 
   constructor(
@@ -61,10 +64,12 @@ export class SubComponent {
   }
 
   start() {
+    this.started = true;
     this.service.start();
   }
 
   stop() {
+    this.started = false;
     this.service.stop();
   }
 }

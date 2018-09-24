@@ -1,4 +1,7 @@
 <p>RxCompoent.message: {{message}}</p>
-<button (click)="listen()">listen</button>
+<button
+  [disabled]="service.started$ | async"
+  (click)="listen()"
+>listen</button>
 <p>lang: ja</p>
 <p>grammars: none</p>

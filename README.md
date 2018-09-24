@@ -29,7 +29,15 @@ import {
 
 @Component({
   selector: 'demo-rx',
-  templateUrl: './rx.component.html',
+  template: `
+  <p>RxCompoent.message: {{message}}</p>
+  <button
+    [disabled]="service.started$ | async"
+    (click)="listen()"
+  >listen</button>
+  <p>lang: ja</p>
+  <p>grammars: none</p>
+  `,
   styleUrls: ['./rx.component.css'],
   providers: [
     RxSpeechRecognitionService,
@@ -40,7 +48,7 @@ export class RxComponent {
   message = '';
 
   constructor(
-    private service: RxSpeechRecognitionService,
+    public service: RxSpeechRecognitionService,
   ) { }
 
   listen() {
