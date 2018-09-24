@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
+import { CommonModule } from '@angular/common';
 import {
   SpeechRecognitionModule,
 } from 'lib/speech-recognition';
@@ -26,6 +26,7 @@ import { SubModule } from 'demo/sub';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     RouterModule,
     // load with configs.
     //

@@ -15,6 +15,8 @@ import {
 })
 export class MainComponent {
 
+  public started = false;
+
   public message = '';
 
   constructor(
@@ -35,10 +37,12 @@ export class MainComponent {
   }
 
   start() {
+    this.started = true;
     this.service.start();
   }
 
   stop() {
+    this.started = false;
     this.service.stop();
   }
 }
