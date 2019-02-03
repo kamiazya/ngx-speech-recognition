@@ -90,7 +90,7 @@
     "@angular-devkit/core" "7.3.0"
     rxjs "6.3.3"
 
-"@angular-devkit/core@0.8.9", "@angular-devkit/core@^0.8.3":
+"@angular-devkit/core@0.8.9":
   version "0.8.9"
   resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-0.8.9.tgz#87e8a9513e2aae8d43683c31dae494e29b4630c4"
   integrity sha512-Umax3YKBPTQy360TeoSNaIIOJOKoXvN/S2WNTV8wDjSWWNiWLTIlckWMb9DVsafAifjUi0mtOLRFuM4YatKgTw==
@@ -100,7 +100,7 @@
     rxjs "6.2.2"
     source-map "0.5.7"
 
-"@angular-devkit/core@7.3.0":
+"@angular-devkit/core@7.3.0", "@angular-devkit/core@^7.3.0":
   version "7.3.0"
   resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-7.3.0.tgz#fc272e39b4c307833e9a7db77007418a246f5410"
   integrity sha512-b0qtAUpgqLpWY8W6vWRv1aj6bXkZCP1rvywl8i8TbGMY67CWRcy5J3fNAMmjiZS+LJixFlIXYf4iOydglyJMfg==
