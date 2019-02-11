@@ -1,13 +1,10 @@
 /* tslint:disable */
 
-export var SpeechRecognition: SpeechRecognitionStatic;
-if (webkitSpeechRecognition) {
-  SpeechRecognition = webkitSpeechRecognition;
-}
-
 export type SpeechGrammarListType = SpeechGrammarList;
 
-export var SpeechGrammarList: SpeechGrammarListStatic;
-if (webkitSpeechGrammarList) {
-  SpeechGrammarList = webkitSpeechGrammarList;
+if (window['webkitSpeechRecognition']) {
+  window['SpeechRecognition'] = window['webkitSpeechRecognition'];
+}
+if (window['webkitSpeechGrammarList']) {
+  window['SpeechGrammarList'] = window['webkitSpeechGrammarList'];
 }

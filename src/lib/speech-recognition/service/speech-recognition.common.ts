@@ -1,6 +1,5 @@
 
 import {
-  SpeechRecognition,
   SpeechGrammarListType,
 } from '../adapter';
 
