@@ -81,17 +81,6 @@
     "@angular-devkit/core" "7.3.1"
     rxjs "6.3.3"
 
-"@angular-devkit/core@7.3.0":
-  version "7.3.0"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-7.3.0.tgz#fc272e39b4c307833e9a7db77007418a246f5410"
-  integrity sha512-b0qtAUpgqLpWY8W6vWRv1aj6bXkZCP1rvywl8i8TbGMY67CWRcy5J3fNAMmjiZS+LJixFlIXYf4iOydglyJMfg==
-  dependencies:
-    ajv "6.7.0"
-    chokidar "2.0.4"
-    fast-json-stable-stringify "2.0.0"
-    rxjs "6.3.3"
-    source-map "0.7.3"
-
 "@angular-devkit/core@7.3.1", "@angular-devkit/core@^7.3.1":
   version "7.3.1"
   resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-7.3.1.tgz#d92f6545796579cabdcfc29579a2c977f7a96c6c"
@@ -228,17 +217,6 @@
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@ngtools/json-schema/-/json-schema-1.1.0.tgz#c3a0c544d62392acc2813a42c8a0dc6f58f86922"
   integrity sha1-w6DFRNYjkqzCgTpCyKDcb1j4aSI=
-
-"@ngtools/webpack@7.3.0":
-  version "7.3.0"
-  resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-7.3.0.tgz#ed6bfb0c7c02db2fdfaf0fdecd4c2b1bb80af7a5"
-  integrity sha512-U/By0Jlwy7nYwrGNtFirTg1aAsEHBL/9DhfFxPI0iu27FWiMttROuN6hmKbbnOmpbiYAVl5qTy3WXPXUIJjG1A==
-  dependencies:
-    "@angular-devkit/core" "7.3.0"
-    enhanced-resolve "4.1.0"
-    rxjs "6.3.3"
-    tree-kill "1.2.1"
-    webpack-sources "1.3.0"
 
 "@ngtools/webpack@7.3.1":
   version "7.3.1"
