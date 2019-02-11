@@ -1,9 +1,6 @@
-import { pipe } from 'rxjs/util/pipe';
-import { UnaryFunction } from 'rxjs/interfaces';
+import { pipe, UnaryFunction, Subject, BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs/observable';
-import { Subject } from 'rxjs/Subject';
 import { filter, map } from 'rxjs/operators';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 import { Injectable, ApplicationRef, Inject, Optional } from '@angular/core';
 
