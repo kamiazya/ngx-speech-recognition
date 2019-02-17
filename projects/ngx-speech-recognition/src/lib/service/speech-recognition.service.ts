@@ -1,4 +1,9 @@
-import { Injectable, ApplicationRef, Inject, Optional } from '@angular/core';
+import {
+  Injectable,
+  ApplicationRef,
+  Inject,
+  Optional,
+} from '@angular/core';
 
 import {
   SpeechRecognitionGrammars,

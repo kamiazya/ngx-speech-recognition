@@ -6,6 +6,7 @@ import {
   SpeechRecognitionMaxAlternatives,
 } from './service';
 
+// tslint:disable-next-line:class-name
 export const SPEECH_RECOGNITION_DEFAULT: Provider[] = [
   {
     provide: SpeechRecognitionContinuous,

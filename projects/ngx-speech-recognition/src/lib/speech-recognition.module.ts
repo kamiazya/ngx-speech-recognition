@@ -45,7 +45,7 @@ export class SpeechRecognitionModule {
   constructor(
     @Inject(PLATFORM_ID) platformId: string
   ) {
-    if (!isPlatformBrowser(platformId)) {
+    if (isPlatformBrowser(platformId) === false) {
       throw new Error('SpeechRecognitionModule: it run on PlatformBrowser.');
     }
   }
@@ -154,9 +154,10 @@ export class SpeechRecognitionModule {
         provide: SpeechRecognitionEndHandler,
       });
     }
-
+  
     return providers;
   }
+
 
   static forRoot(config: SpeechRecognitionConfig): ModuleWithProviders {
     const providers: Provider[] = SpeechRecognitionModule.buildProvidersFromConfig(config);
@@ -175,10 +176,9 @@ export class SpeechRecognitionModule {
   }
 
   static withConfig(config: SpeechRecognitionConfig): ModuleWithProviders {
-    const providers: Provider[] = SpeechRecognitionModule.buildProvidersFromConfig(config);
     return {
       ngModule: SpeechRecognitionModule,
-      providers: providers,
+      providers: SpeechRecognitionModule.buildProvidersFromConfig(config),
     };
   }
 }

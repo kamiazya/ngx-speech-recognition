@@ -1,9 +1,6 @@
-
 import {
   SpeechGrammarListType,
 } from '../adapter';
-
-
 
 export class SpeechRecognitionCommon {
 

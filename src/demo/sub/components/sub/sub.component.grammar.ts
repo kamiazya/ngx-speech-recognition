@@ -1,5 +1,3 @@
-import '../../../../lib/speech-recognition/adapter/adapter';
-
 /**
  * @see https://developer.mozilla.org/ja/docs/Web/API/SpeechGrammarList#Examples
  */

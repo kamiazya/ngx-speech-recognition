@@ -1,18 +1,13 @@
 import { Component } from '@angular/core';
-
-import {
-  // Service
-  SpeechRecognitionService,
-
-  // Optional Params
-  SpeechRecognitionLang,
-  SpeechRecognitionMaxAlternatives,
-  SpeechRecognitionGrammars,
-} from 'lib/speech-recognition';
-
 import {
   ColorGrammar,
 } from './sub.component.grammar';
+import {
+  SpeechRecognitionLang,
+  SpeechRecognitionMaxAlternatives,
+  SpeechRecognitionGrammars,
+  SpeechRecognitionService,
+} from '../../../../../projects/ngx-speech-recognition/src/public_api';
 
 @Component({
   selector: 'demo-sub',
