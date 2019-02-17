@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.3.0
+
+Angular 7 Support.
+
 ## 0.2.0
 
 Angular 6 Support.

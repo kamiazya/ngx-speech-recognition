@@ -1,25 +1,31 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
+    "importHelpers": true,
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
+    "module": "es2015",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "noEmitHelpers": true,
-    "importHelpers": true,
+    "skipLibCheck": true,
     "target": "es5",
     "typeRoots": [
       "node_modules/@types"
     ],
-    "baseUrl": "./src",
-    "sourceRoot": "./src",
-    "mapRoot": "./src",
     "lib": [
       "es2017",
       "dom"
     ],
-    "module": "es2015"
+    "paths": {
+      "ngx-speech-recognition": [
+        "dist/ngx-speech-recognition"
+      ],
+      "ngx-speech-recognition/*": [
+        "dist/ngx-speech-recognition/*"
+      ]
+    }
   }
 }

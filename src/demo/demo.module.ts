@@ -2,14 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import {
-  SpeechRecognitionModule,
-} from 'lib/speech-recognition';
-
 import { DemoComponent } from './demo.component';
 import { MainComponent } from './components';
 
-import { SubModule } from 'demo/sub';
+import { SubModule } from '../demo/sub';
+import { SpeechRecognitionModule } from '../../projects/ngx-speech-recognition/src/public_api';
 
 @NgModule({
   declarations: [

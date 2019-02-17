@@ -1,7 +1,3 @@
-/* tslint:disable */
-
-export type SpeechGrammarListType = SpeechGrammarList;
-
 if (window['webkitSpeechRecognition']) {
   window['SpeechRecognition'] = window['webkitSpeechRecognition'];
 }

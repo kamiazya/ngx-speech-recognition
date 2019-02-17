@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-
 import {
   RxSpeechRecognitionService,
   resultList,
-} from 'lib/speech-recognition/service';
+} from '../../../../../projects/ngx-speech-recognition/src/public_api';
 
 @Component({
   selector: 'demo-rx',
