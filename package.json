@@ -29,7 +29,7 @@
     "@angular/platform-server": "^7.2.4",
     "@angular/router": "^7.2.4",
     "@ngtools/webpack": "7.3.3",
-    "core-js": "^2.6.4",
+    "core-js": "^2.6.5",
     "rxjs": "^6.4.0",
     "rxjs-compat": "^6.4.0",
     "zone.js": "^0.8.29"
