@@ -65,3 +65,59 @@ export class RxComponent {
 
 }
 ```
+
+### Settings Example
+
+#### Module Pattern
+
+```typescript
+import {
+  SpeechRecognitionModule,
+} from '@kamiazya/ngx-speech-recognition';
+
+@NgModule({
+  imports: [
+    // load with configs.
+    SpeechRecognitionModule.withConfig({
+      lang: 'en-US',
+      interimResults: true,
+      maxAlternatives: 10,
+    }),
+  ],
+})
+export class DemoModule { }
+```
+
+#### Provider Pattern
+
+Dependency Inject to `SpeechRecognitionService`.
+
+```typescript
+import {
+  SpeechRecognitionLang,
+  SpeechRecognitionMaxAlternatives,
+  SpeechRecognitionGrammars,
+  SpeechRecognitionService,
+} from '@kamiazya/ngx-speech-recognition';
+
+@Component({
+  templateUrl: './sub.component.html',
+  styleUrls: ['./sub.component.css'],
+  providers: [
+    {
+      provide: SpeechRecognitionLang,
+      useValue: 'en-US',
+    },
+    {
+      provide: SpeechRecognitionMaxAlternatives,
+      useValue: 1,
+    },
+    SpeechRecognitionService,
+  ],
+})
+export class SubComponent { }
+```
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
