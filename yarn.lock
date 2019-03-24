@@ -70,13 +70,13 @@
   optionalDependencies:
     node-sass "4.11.0"
 
-"@angular-devkit/build-ng-packagr@~0.13.0":
-  version "0.13.1"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/build-ng-packagr/-/build-ng-packagr-0.13.1.tgz#3508523a039f71ccff1364db553a904e4db2c8ea"
-  integrity sha512-9qvdNvtlgJ3WDppbzwD9fOQzAsVogBlDeLE5zUH1ap+zcoyZEGjS1BKluiYSJ1u5Q5Nlfb3FSI/D1r9LuDQS/A==
+"@angular-devkit/build-ng-packagr@~0.13.6":
+  version "0.13.6"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/build-ng-packagr/-/build-ng-packagr-0.13.6.tgz#4c3d4825d95485a6fe457bb264b238407af9c834"
+  integrity sha512-MYcuMAFPouSWf4E697b2Qw3v5JtJoGuX2Zszy3TaDdUIy9yDKDBKmvMr6rZuMIx3pqJTTjl/g44KTfsiElAGgQ==
   dependencies:
-    "@angular-devkit/architect" "0.13.1"
-    "@angular-devkit/core" "7.3.1"
+    "@angular-devkit/architect" "0.13.6"
+    "@angular-devkit/core" "7.3.6"
     rxjs "6.3.3"
     semver "5.6.0"
 
@@ -110,7 +110,7 @@
     rxjs "6.3.3"
     source-map "0.7.3"
 
-"@angular-devkit/core@7.3.3", "@angular-devkit/core@^7.3.1":
+"@angular-devkit/core@7.3.3":
   version "7.3.3"
   resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-7.3.3.tgz#cd6d5a8eca25ef07b6394bc2b08133d90d08d39f"
   integrity sha512-fosULDtMoDWrOyUzTmBkJccOy7zodo02kENyKai7vOv9EWfv9jytkVdNc+jl0ys9OE2QadvSYBo49jhnZxFXfQ==
@@ -121,7 +121,7 @@
     rxjs "6.3.3"
     source-map "0.7.3"
 
-"@angular-devkit/core@7.3.6":
+"@angular-devkit/core@7.3.6", "@angular-devkit/core@^7.3.1":
   version "7.3.6"
   resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-7.3.6.tgz#bc11ca571187f0f0ce9df012332794907e0b8133"
   integrity sha512-aoarMK0DJIdwjVA0OuQIN7b8nKPcF9n5vSMF7MFmhKpTw5/uV3SynQZbm3YCgylu/2CMuiTzKuAunnWWdli//g==
