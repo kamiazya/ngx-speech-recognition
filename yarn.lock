@@ -110,7 +110,7 @@
     rxjs "6.3.3"
     source-map "0.7.3"
 
-"@angular-devkit/core@7.3.3", "@angular-devkit/core@^7.3.1":
+"@angular-devkit/core@7.3.3":
   version "7.3.3"
   resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-7.3.3.tgz#cd6d5a8eca25ef07b6394bc2b08133d90d08d39f"
   integrity sha512-fosULDtMoDWrOyUzTmBkJccOy7zodo02kENyKai7vOv9EWfv9jytkVdNc+jl0ys9OE2QadvSYBo49jhnZxFXfQ==
@@ -125,6 +125,17 @@
   version "7.3.6"
   resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-7.3.6.tgz#bc11ca571187f0f0ce9df012332794907e0b8133"
   integrity sha512-aoarMK0DJIdwjVA0OuQIN7b8nKPcF9n5vSMF7MFmhKpTw5/uV3SynQZbm3YCgylu/2CMuiTzKuAunnWWdli//g==
+  dependencies:
+    ajv "6.9.1"
+    chokidar "2.0.4"
+    fast-json-stable-stringify "2.0.0"
+    rxjs "6.3.3"
+    source-map "0.7.3"
+
+"@angular-devkit/core@^7.3.8":
+  version "7.3.8"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-7.3.8.tgz#702b0944a69c71cce3a1492e0d62de18df22a993"
+  integrity sha512-3X9uzaZXFpm5o2TSzhD6wEOtVU32CgeytKjD1Scxj+uMMVo48SWLlKiFh312T+smI9ko7tOT8VqxglwYkWosgg==
   dependencies:
     ajv "6.9.1"
     chokidar "2.0.4"
@@ -723,7 +734,7 @@ ajv@6.7.0:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-ajv@6.9.1:
+ajv@6.9.1, ajv@^6.1.0, ajv@^6.5.5:
   version "6.9.1"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.9.1.tgz#a4d3683d74abc5670e75f0b16520f70a20ea8dc1"
   integrity sha512-XDN92U311aINL77ieWHmqCcNlwjoP5cHXDxIxbf2MaPYuCXOHS7gHH8jktxeK5omgd52XbSTX6a4Piwd1pQmzA==
@@ -742,16 +753,6 @@ ajv@^5.0.0:
     fast-deep-equal "^1.0.0"
     fast-json-stable-stringify "^2.0.0"
     json-schema-traverse "^0.3.0"
-
-ajv@^6.1.0, ajv@^6.5.5:
-  version "6.8.1"
-  resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.8.1.tgz#0890b93742985ebf8973cd365c5b23920ce3cb20"
-  integrity sha512-eqxCp82P+JfqL683wwsL73XmFs1eG6qjw+RD3YHx+Jll1r0jNd4dh8QG9NYAeNGA/hnZjeEDgtTskgJULbxpWQ==
-  dependencies:
-    fast-deep-equal "^2.0.1"
-    fast-json-stable-stringify "^2.0.0"
-    json-schema-traverse "^0.4.1"
-    uri-js "^4.2.2"
 
 amdefine@>=0.0.4:
   version "1.0.1"
@@ -1563,7 +1564,7 @@ chardet@^0.7.0:
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
 
-chokidar@2.0.4, chokidar@^2.0.0, chokidar@^2.0.2, chokidar@^2.0.3:
+chokidar@2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-2.0.4.tgz#356ff4e2b0e8e43e322d18a372460bbcf3accd26"
   integrity sha512-z9n7yt9rOvIJrMhvDtDictKrkFHeihkNl6uWMmZlmL6tJtX9Cs+87oK+teBx+JIgzvbX3yZHT3eF8vpbDxHJXQ==
@@ -1583,7 +1584,7 @@ chokidar@2.0.4, chokidar@^2.0.0, chokidar@^2.0.2, chokidar@^2.0.3:
   optionalDependencies:
     fsevents "^1.2.2"
 
-chokidar@^2.1.1:
+chokidar@^2.0.0, chokidar@^2.0.2, chokidar@^2.0.3, chokidar@^2.1.1:
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-2.1.5.tgz#0ae8434d962281a5f56c72869e79cb6d9d86ad4d"
   integrity sha512-i0TprVWp+Kj4WRPtInjexJ8Q+BqTE909VpH8xVhXrJkoc5QC8VO9TryGOqTr+2hljzc1sC62t22h5tZePodM/A==
