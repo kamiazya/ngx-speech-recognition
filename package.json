@@ -1,6 +1,6 @@
 {
   "name": "@kamiazya/ngx-speech-recognition",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "license": "MIT",
   "author": "kamiazya",
   "repository": {
@@ -15,6 +15,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
+  },
+  "peerDependencies": {
+    "@types/webspeechapi": "0.0.29"
   },
   "dependencies": {
     "@angular/common": "^6.1.8",
@@ -34,7 +37,6 @@
     "@angular/cli": "^6.2.3",
     "@angular/compiler-cli": "^6.1.8",
     "@angular/language-service": "^6.1.8",
-    "@types/webspeechapi": "0.0.29",
     "codelyzer": "^4.4.4",
     "ng-packagr": "^3.0.6",
     "protractor": "^5.4.1",
