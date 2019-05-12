@@ -1,20 +1,35 @@
 {
   "name": "@kamiazya/ngx-speech-recognition",
   "version": "0.3.2",
+  "description": "Angular 5+ speech recognition service (based on browser implementation such as Chrome).",
   "license": "MIT",
-  "author": "kamiazya",
+  "author": "kamiazya <yuki@kamiazya.tech>",
   "private": false,
   "keywords": [
     "angular",
     "webspeechapi",
     "speech-recognition"
   ],
+  "scripts": {
+    "build:schematics": "tsc -p tsconfig.schematics.json",
+    "test:schematics": "npm run build:schematics && jasmine schematics/**/*.spec.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/kamiazya/ngx-speech-recognition.git"
   },
   "peerDependencies": {
     "@angular/common": "^7.2.0",
-    "@angular/core": "^7.2.0"
-  }
+    "@angular/core": "^7.2.0",
+    "@angular/cdk": "^7.2.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/core": "^7.3.9",
+    "@angular-devkit/schematics": "^7.3.9",
+    "@types/jasmine": "^3.3.12",
+    "@types/node": "^12.0.0",
+    "jasmine": "^3.4.0",
+    "typescript": "^3.4.5"
+  },
+  "schematics": "./schematics/collection.json"
 }

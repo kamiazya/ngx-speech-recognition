@@ -17,6 +17,8 @@ script:
   - yarn
   - yarn lint
   - yarn build
+  - yarn install:lib
+  - yarn test:lib:schematics
 
 addons:
   apt:
