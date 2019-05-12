@@ -14,7 +14,7 @@
     "build": "ng build ngx-speech-recognition",
     "copy": "cp ./README.md ./dist/ngx-speech-recognition/ && cp ./speech.gif ./dist/ngx-speech-recognition/ && cp ./LICENSE ./dist/ngx-speech-recognition/",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "ng lint ngx-speech-recognition",
     "e2e": "ng e2e"
   },
   "dependencies": {
@@ -49,6 +49,7 @@
     "karma": "^4.0.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-cli": "^2.0.0",
+    "karma-coverage-istanbul-reporter": "^2.0.5",
     "karma-jasmine": "^2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
     "ng-packagr": "^4.7.1",

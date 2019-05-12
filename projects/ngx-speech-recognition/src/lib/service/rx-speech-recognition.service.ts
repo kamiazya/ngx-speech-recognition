@@ -133,7 +133,7 @@ export class RxSpeechRecognitionService extends SpeechRecognitionCommon {
   // 途中でunsbscriveすることで聴取を中断します。
   public listen(): Observable<SpeechRecognitionServiceEvent> {
 
-    const listener = Observable.create((ovserver) => {
+    const listener = new Observable<SpeechRecognitionServiceEvent>((ovserver) => {
       // create subscriotion
       const subscriotion = this.proxy$.subscribe({
         next: (e) => {

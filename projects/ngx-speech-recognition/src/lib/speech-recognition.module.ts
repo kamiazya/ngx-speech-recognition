@@ -154,7 +154,7 @@ export class SpeechRecognitionModule {
         provide: SpeechRecognitionEndHandler,
       });
     }
-  
+
     return providers;
   }
 
