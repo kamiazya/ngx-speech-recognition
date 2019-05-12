@@ -1,0 +1,202 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@kamiazya/ngx-speech-recognition documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	      <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">@kamiazya/ngx-speech-recognition documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<p><a href="https://travis-ci.com/kamiazya/ngx-speech-recognition"><img src="https://travis-ci.com/kamiazya/ngx-speech-recognition.svg?branch=master" alt="Build Status" class="img-responsive"></a> <a href="https://codeclimate.com/github/kamiazya/ngx-speech-recognition/maintainability"><img src="https://api.codeclimate.com/v1/badges/08225ee2c02a584dca4f/maintainability" alt="Maintainability" class="img-responsive"></a> <a href="https://codeclimate.com/github/kamiazya/ngx-speech-recognition/test_coverage"><img src="https://api.codeclimate.com/v1/badges/08225ee2c02a584dca4f/test_coverage" alt="Test Coverage" class="img-responsive"></a> <a href="https://badge.fury.io/js/%40kamiazya%2Fngx-speech-recognition"><img src="https://badge.fury.io/js/%40kamiazya%2Fngx-speech-recognition.svg" alt="npm version" class="img-responsive"></a> <a href="https://www.codacy.com/app/kamiazya/go-dispatcher?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kamiazya/go-dispatcher&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/cd6714ceafe6438abf661fec1c3fe615" alt="Codacy Badge" class="img-responsive"></a> <a href="https://devtoken.rocks/package/@kamiazya/ngx-speech-recognition"><img src="https://badge.devtoken.rocks/@kamiazya/ngx-speech-recognition" alt="@kamiazya/ngx-speech-recognition Dev Token" class="img-responsive"></a> <a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fkamiazya%2Fngx-speech-recognition?ref=badge_shield"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkamiazya%2Fngx-speech-recognition.svg?type=shield" alt="FOSSA Status" class="img-responsive"></a></p>
+<h1 id="ngxspeechrecognition">NgxSpeechRecognition</h1>
+<p><a href="https://nodei.co/npm/@kamiazya/ngx-speech-recognition/"><img src="https://nodei.co/npm/@kamiazya/ngx-speech-recognition.png?downloads=true" alt="NPM" class="img-responsive"></a></p>
+<p>Angular 5+ speech recognition service (based on browser implementation such as Chrome).</p>
+<h2 id="demo">Demo</h2>
+<p><img src="./speech.gif" alt="demo" class="img-responsive"></p>
+<p>Run <code>ng serve</code> for a demo server. Navigate to <code>http://localhost:4200/</code>. The app will automatically reload if you change any of the source files.</p>
+<h2 id="see">See</h2>
+<p><a href="https://caniuse.com/#feat=speech-recognition">Support Browsers</a></p>
+<p><a href="https://developer.mozilla.org/ja/docs/Web/API/Web_Speech_API">Web Speech API -- MDN</a></p>
+<h2 id="api">API</h2>
+<h3 id="rxspeechrecognitionservice">RxSpeechRecognitionService</h3>
+<p>```typescript
+import { Component } from &#39;@angular/core&#39;;
+import {
+  RxSpeechRecognitionService,
+  resultList,
+} from &#39;@kamiazya/ngx-speech-recognition&#39;;</p>
+<p>@Component({
+  selector: &#39;demo-rx&#39;,
+  template: `
+  <p>RxCompoent.message: {{message}}</p>
+  &lt;button
+    [disabled]=&quot;service.started$ | async&quot;
+    (click)=&quot;listen()&quot;</p>
+<blockquote>
+<p>listen</button>
+  <p>lang: ja</p>
+  <p>grammars: none</p>
+  `,
+  styleUrls: [&#39;./rx.component.css&#39;],
+  providers: [
+    RxSpeechRecognitionService,
+  ],
+})
+export class RxComponent {</p>
+</blockquote>
+<p>  message = &#39;&#39;;</p>
+<p>  constructor(
+    public service: RxSpeechRecognitionService,
+  ) { }</p>
+<p>  listen() {
+    this.service
+      .listen()
+      .pipe(resultList)
+      .subscribe((list: SpeechRecognitionResultList) =&gt; {
+        this.message = list.item(0).item(0).transcript;
+        console.log(&#39;RxComponent:onresult&#39;, this.message, list);
+      });
+  }</p>
+<p>}
+```</p>
+<h3 id="settings-example">Settings Example</h3>
+<h4 id="module-pattern">Module Pattern</h4>
+<p>```typescript
+import {
+  SpeechRecognitionModule,
+} from &#39;@kamiazya/ngx-speech-recognition&#39;;</p>
+<p>@NgModule({
+  imports: [
+    // load with configs.
+    SpeechRecognitionModule.withConfig({
+      lang: &#39;en-US&#39;,
+      interimResults: true,
+      maxAlternatives: 10,
+    }),
+  ],
+})
+export class DemoModule { }
+```</p>
+<h4 id="provider-pattern">Provider Pattern</h4>
+<p>Dependency Inject to <code>SpeechRecognitionService</code>.</p>
+<p>```typescript
+import {
+  SpeechRecognitionLang,
+  SpeechRecognitionMaxAlternatives,
+  SpeechRecognitionGrammars,
+  SpeechRecognitionService,
+} from &#39;@kamiazya/ngx-speech-recognition&#39;;</p>
+<p>@Component({
+  templateUrl: &#39;./sub.component.html&#39;,
+  styleUrls: [&#39;./sub.component.css&#39;],
+  providers: [
+    {
+      provide: SpeechRecognitionLang,
+      useValue: &#39;en-US&#39;,
+    },
+    {
+      provide: SpeechRecognitionMaxAlternatives,
+      useValue: 1,
+    },
+    SpeechRecognitionService,
+  ],
+})
+export class SubComponent { }
+```</p>
+<h2 id="license">License</h2>
+<p><a href="https://choosealicense.com/licenses/mit/">MIT</a></p>
+<p><a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fkamiazya%2Fngx-speech-recognition?ref=badge_large"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkamiazya%2Fngx-speech-recognition.svg?type=large" alt="FOSSA Status" class="img-responsive"></a></p>
+<h2 id="author">Author</h2>
+<p><a href="https://github.com/kamiazya">kamiazya(Yuki Yamazaki)</a></p>
+<p><a href="https://ko-fi.com/W7W5VDNO"><img src="https://www.ko-fi.com/img/githubbutton_sm.svg" alt="ko-fi" class="img-responsive"></a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

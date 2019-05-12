@@ -1,0 +1,1767 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@kamiazya/ngx-speech-recognition documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@kamiazya/ngx-speech-recognition documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>SpeechRecognitionService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>projects/ngx-speech-recognition/src/lib/service/speech-recognition.service.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                        <code><a href="../classes/SpeechRecognitionCommon.html" target="_self" >SpeechRecognitionCommon</a></code>
+            </p>
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#internal">internal</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#abort">abort</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#initHandlers">initHandlers</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#initInternal">initInternal</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#start">start</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#stop">stop</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#onaudiostart">onaudiostart</a>
+                                </li>
+                                <li>
+                                    <a href="#onsoundstart">onsoundstart</a>
+                                </li>
+                                <li>
+                                    <a href="#onspeechstart">onspeechstart</a>
+                                </li>
+                                <li>
+                                    <a href="#onspeechend">onspeechend</a>
+                                </li>
+                                <li>
+                                    <a href="#onsoundend">onsoundend</a>
+                                </li>
+                                <li>
+                                    <a href="#onaudioend">onaudioend</a>
+                                </li>
+                                <li>
+                                    <a href="#onresult">onresult</a>
+                                </li>
+                                <li>
+                                    <a href="#onnomatch">onnomatch</a>
+                                </li>
+                                <li>
+                                    <a href="#onerror">onerror</a>
+                                </li>
+                                <li>
+                                    <a href="#onstart">onstart</a>
+                                </li>
+                                <li>
+                                    <a href="#onend">onend</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(ref: <a href="https://angular.io/api/core/ApplicationRef" target="_blank">ApplicationRef</a>, grammars: <a href="../undefineds/SpeechGrammarListType.html">SpeechGrammarListType</a>, lang: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, continuous: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, interimResults: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, maxAlternatives: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, serviceURI: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, audiostartHandler: (ev: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>) => void, soundstartHandler: (ev: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>) => void, speechstartHandler: (ev: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>) => void, speechendHandler: (ev: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>) => void, soundendHandler: (ev: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>) => void, audioendHandler: (ev: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>) => void, resultHandler: (ev: SpeechRecognitionEvent) => void, nomatchHandler: (ev: SpeechRecognitionEvent) => void, errorHandler: (ev: SpeechRecognitionError) => void, startHandler: (ev: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>) => void, endHandler: (ev: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>) => void)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="113" class="link-to-prism">projects/ngx-speech-recognition/src/lib/service/speech-recognition.service.ts:113</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>ref</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ApplicationRef" target="_blank" >ApplicationRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>grammars</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../miscellaneous/typealiases.html#SpeechGrammarListType" target="_self" >SpeechGrammarListType</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>lang</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>continuous</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>interimResults</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>maxAlternatives</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>serviceURI</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>audiostartHandler</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>soundstartHandler</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>speechstartHandler</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>speechendHandler</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>soundendHandler</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>audioendHandler</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>resultHandler</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>nomatchHandler</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>errorHandler</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>startHandler</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>endHandler</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="abort"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            abort
+                        </b>
+                        <a href="#abort"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>abort()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="353"
+                            class="link-to-prism">projects/ngx-speech-recognition/src/lib/service/speech-recognition.service.ts:353</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initHandlers"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            initHandlers
+                        </b>
+                        <a href="#initHandlers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>initHandlers()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">projects/ngx-speech-recognition/src/lib/service/speech-recognition.service.ts:45</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initInternal"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            initInternal
+                        </b>
+                        <a href="#initInternal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>initInternal()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">projects/ngx-speech-recognition/src/lib/service/speech-recognition.service.ts:60</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="start"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            start
+                        </b>
+                        <a href="#start"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>start()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="331"
+                            class="link-to-prism">projects/ngx-speech-recognition/src/lib/service/speech-recognition.service.ts:331</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stop"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            stop
+                        </b>
+                        <a href="#stop"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>stop()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="342"
+                            class="link-to-prism">projects/ngx-speech-recognition/src/lib/service/speech-recognition.service.ts:342</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="internal"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                            internal</b>
+                            <a href="#internal"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>SpeechRecognition</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new SpeechRecognition()</code>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/SpeechRecognitionCommon.html" target="_self" >SpeechRecognitionCommon</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../classes/SpeechRecognitionCommon.html#source" target="_self" >SpeechRecognitionCommon:7</a></code>
+</div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onaudiostart"></a>
+                        <span class="name"><b>onaudiostart</b><a href="#onaudiostart"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>onaudiostart(handler: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank">function</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="187" class="link-to-prism">projects/ngx-speech-recognition/src/lib/service/speech-recognition.service.ts:187</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>handler</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onsoundstart"></a>
+                        <span class="name"><b>onsoundstart</b><a href="#onsoundstart"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>onsoundstart(handler: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank">function</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="199" class="link-to-prism">projects/ngx-speech-recognition/src/lib/service/speech-recognition.service.ts:199</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>handler</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onspeechstart"></a>
+                        <span class="name"><b>onspeechstart</b><a href="#onspeechstart"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>onspeechstart(handler: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank">function</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="211" class="link-to-prism">projects/ngx-speech-recognition/src/lib/service/speech-recognition.service.ts:211</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>handler</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onspeechend"></a>
+                        <span class="name"><b>onspeechend</b><a href="#onspeechend"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>onspeechend(handler: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank">function</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="223" class="link-to-prism">projects/ngx-speech-recognition/src/lib/service/speech-recognition.service.ts:223</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>handler</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onsoundend"></a>
+                        <span class="name"><b>onsoundend</b><a href="#onsoundend"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>onsoundend(handler: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank">function</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="235" class="link-to-prism">projects/ngx-speech-recognition/src/lib/service/speech-recognition.service.ts:235</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>handler</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onaudioend"></a>
+                        <span class="name"><b>onaudioend</b><a href="#onaudioend"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>onaudioend(handler: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank">function</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="247" class="link-to-prism">projects/ngx-speech-recognition/src/lib/service/speech-recognition.service.ts:247</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>handler</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onresult"></a>
+                        <span class="name"><b>onresult</b><a href="#onresult"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>onresult(handler: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank">function</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="261" class="link-to-prism">projects/ngx-speech-recognition/src/lib/service/speech-recognition.service.ts:261</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>handler</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onnomatch"></a>
+                        <span class="name"><b>onnomatch</b><a href="#onnomatch"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>onnomatch(handler: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank">function</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="281" class="link-to-prism">projects/ngx-speech-recognition/src/lib/service/speech-recognition.service.ts:281</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>handler</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onerror"></a>
+                        <span class="name"><b>onerror</b><a href="#onerror"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>onerror(handler: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank">function</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="293" class="link-to-prism">projects/ngx-speech-recognition/src/lib/service/speech-recognition.service.ts:293</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>handler</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onstart"></a>
+                        <span class="name"><b>onstart</b><a href="#onstart"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>onstart(handler: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank">function</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="309" class="link-to-prism">projects/ngx-speech-recognition/src/lib/service/speech-recognition.service.ts:309</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>handler</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onend"></a>
+                        <span class="name"><b>onend</b><a href="#onend"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>onend(handler: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank">function</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="320" class="link-to-prism">projects/ngx-speech-recognition/src/lib/service/speech-recognition.service.ts:320</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>handler</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+</section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  Injectable,
+  ApplicationRef,
+  Inject,
+  Optional,
+} from &#x27;@angular/core&#x27;;
+
+import {
+  SpeechRecognitionGrammars,
+  SpeechRecognitionLang,
+  SpeechRecognitionContinuous,
+  SpeechRecognitionInterimResults,
+  SpeechRecognitionMaxAlternatives,
+  SpeechRecognitionServiceUri,
+  SpeechRecognitionAudiostartHandler,
+  SpeechRecognitionSoundstartHandler,
+  SpeechRecognitionSpeechstartHandler,
+  SpeechRecognitionSpeechendHandler,
+  SpeechRecognitionSoundendHandler,
+  SpeechRecognitionAudioendHandler,
+  SpeechRecognitionResultHandler,
+  SpeechRecognitionNomatchHandler,
+  SpeechRecognitionErrorHandler,
+  SpeechRecognitionStartHandler,
+  SpeechRecognitionEndHandler,
+} from &#x27;./speech-recognition.token&#x27;;
+
+import {
+  SpeechGrammarListType,
+} from &#x27;../adapter&#x27;;
+
+import {
+  SpeechRecognitionCommon,
+} from &#x27;./speech-recognition.common&#x27;;
+
+// @dynamic
+@Injectable()
+/**
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API
+ */
+export class SpeechRecognitionService extends SpeechRecognitionCommon {
+
+  private initHandlers() {
+    const _ &#x3D; () &#x3D;&gt; { };
+    if (!this.audiostartHandler) { this.audiostartHandler &#x3D; _; }
+    if (!this.soundstartHandler) { this.soundstartHandler &#x3D; _; }
+    if (!this.speechstartHandler) { this.speechstartHandler &#x3D; _; }
+    if (!this.speechendHandler) { this.speechendHandler &#x3D; _; }
+    if (!this.soundendHandler) { this.soundendHandler &#x3D; _; }
+    if (!this.audioendHandler) { this.audioendHandler &#x3D; _; }
+    if (!this.resultHandler) { this.resultHandler &#x3D; _; }
+    if (!this.nomatchHandler) { this.nomatchHandler &#x3D; _; }
+    if (!this.errorHandler) { this.errorHandler &#x3D; _; }
+    if (!this.startHandler) { this.startHandler &#x3D; _; }
+    if (!this.endHandler) { this.endHandler &#x3D; _; }
+  }
+
+  private initInternal() {
+    // see setter methods
+    this.grammars &#x3D; this._grammars;
+    this.lang &#x3D; this._lang;
+    this.continuous &#x3D; this._continuous;
+    this.interimResults &#x3D; this._interimResults;
+    this.maxAlternatives &#x3D; this._maxAlternatives;
+    this.serviceURI &#x3D; this._serviceURI;
+
+    this.internal.onaudiostart &#x3D; (e: Event) &#x3D;&gt; {
+      this.audiostartHandler(e);
+      this.ref.tick();
+    };
+    this.internal.onsoundstart &#x3D; (e: Event) &#x3D;&gt; {
+      this.soundstartHandler(e);
+      this.ref.tick();
+    };
+    this.internal.onspeechstart &#x3D; (e: Event) &#x3D;&gt; {
+      this.speechstartHandler(e);
+      this.ref.tick();
+    };
+    this.internal.onspeechend &#x3D; (e: Event) &#x3D;&gt; {
+      this.speechendHandler(e);
+      this.ref.tick();
+    };
+    this.internal.onsoundend &#x3D; (e: Event) &#x3D;&gt; {
+      this.soundendHandler(e);
+      this.ref.tick();
+    };
+    this.internal.onaudioend &#x3D; (e: Event) &#x3D;&gt; {
+      this.audioendHandler(e);
+      this.ref.tick();
+    };
+    this.internal.onresult &#x3D; (e: SpeechRecognitionEvent) &#x3D;&gt; {
+      this.resultHandler(e);
+      this.ref.tick();
+    };
+    this.internal.onnomatch &#x3D; (e: SpeechRecognitionEvent) &#x3D;&gt; {
+      this.nomatchHandler(e);
+      this.ref.tick();
+    };
+    this.internal.onerror &#x3D; (e: SpeechRecognitionError) &#x3D;&gt; {
+      this.errorHandler(e);
+      this.ref.tick();
+    };
+    this.internal.onstart &#x3D; (e: Event) &#x3D;&gt; {
+      this.startHandler(e);
+      this.ref.tick();
+    };
+    this.internal.onend &#x3D; (e: Event) &#x3D;&gt; {
+      this.endHandler(e);
+      this.ref.tick();
+    };
+  }
+
+
+  constructor(
+    private ref: ApplicationRef,
+
+    @Optional() @Inject(SpeechRecognitionGrammars)
+    grammars: SpeechGrammarListType,
+
+    @Optional() @Inject(SpeechRecognitionLang)
+    lang: string,
+
+    @Optional() @Inject(SpeechRecognitionContinuous)
+    continuous: boolean,
+
+    @Optional() @Inject(SpeechRecognitionInterimResults)
+    interimResults: boolean,
+
+    @Optional() @Inject(SpeechRecognitionMaxAlternatives)
+    maxAlternatives: number,
+
+    @Optional() @Inject(SpeechRecognitionServiceUri)
+    serviceURI: string,
+
+    @Optional() @Inject(SpeechRecognitionAudiostartHandler)
+    private audiostartHandler: (ev: Event) &#x3D;&gt; any,
+
+    @Optional() @Inject(SpeechRecognitionSoundstartHandler)
+    private soundstartHandler: (ev: Event) &#x3D;&gt; any,
+
+    @Optional() @Inject(SpeechRecognitionSpeechstartHandler)
+    private speechstartHandler: (ev: Event) &#x3D;&gt; any,
+
+    @Optional() @Inject(SpeechRecognitionSpeechendHandler)
+    private speechendHandler: (ev: Event) &#x3D;&gt; any,
+
+    @Optional() @Inject(SpeechRecognitionSoundendHandler)
+    private soundendHandler: (ev: Event) &#x3D;&gt; any,
+
+    @Optional() @Inject(SpeechRecognitionAudioendHandler)
+    private audioendHandler: (ev: Event) &#x3D;&gt; any,
+
+    @Optional() @Inject(SpeechRecognitionResultHandler)
+    private resultHandler: (ev: SpeechRecognitionEvent) &#x3D;&gt; any,
+
+    @Optional() @Inject(SpeechRecognitionNomatchHandler)
+    private nomatchHandler: (ev: SpeechRecognitionEvent) &#x3D;&gt; any,
+
+    @Optional() @Inject(SpeechRecognitionErrorHandler)
+    private errorHandler: (ev: SpeechRecognitionError) &#x3D;&gt; any,
+
+    @Optional() @Inject(SpeechRecognitionStartHandler)
+    private startHandler: (ev: Event) &#x3D;&gt; any,
+
+    @Optional() @Inject(SpeechRecognitionEndHandler)
+    private endHandler: (ev: Event) &#x3D;&gt; any
+  ) {
+    super(grammars, lang, continuous, interimResults, maxAlternatives, serviceURI);
+
+    this.initHandlers();
+
+    this.initInternal();
+  }
+
+
+  // The onaudiostart property of the SpeechRecognition interface
+  // represents an event handler that will run
+  // when the user agent has started to capture audio
+  // (when the audiostart event fires.)
+  //
+  // SpeechRecognitionインターフェイスのonaudiostartプロパティは、
+  // ユーザーエージェントがオーディオのキャプチャを開始したとき
+  // （audiostartイベントが発生したとき）に実行されるイベントハンドラを
+  // 表します。
+  set onaudiostart(handler: (ev: Event) &#x3D;&gt; any) {
+    this.audiostartHandler &#x3D; handler;
+  }
+
+  // The onsoundstart property of the SpeechRecognition interface represents
+  // an event handler that will run when any sound
+  // — recognisable speech or not
+  // — has been detected (when the soundstart event fires.)
+  //
+  // SpeechRecognitionインターフェイスのonsoundstartプロパティは、
+  // サウンド認識可能な音声が検出されたときに実行されるイベントハンドラを表します
+  // （サウンドスタートイベントが発生したとき）。
+  set onsoundstart(handler: (ev: Event) &#x3D;&gt; any) {
+    this.soundstartHandler &#x3D; handler;
+  }
+
+  // The onspeechstart property of the SpeechRecognition interface represents
+  // an event handler that will run when sound recognised
+  // by the speech recognition service as speech has been detected
+  // (when the speechstart event fires.)
+  //
+  // SpeechRecognitionインターフェイスのonspeechstartプロパティは、
+  // スピーチが検出されたとき（スピーチ開始イベントが発生したとき）に
+  // 音声認識サービスによって認識されたサウンドが実行されるイベントハンドラを表します。
+  set onspeechstart(handler: (ev: Event) &#x3D;&gt; any) {
+    this.speechstartHandler &#x3D; handler;
+  }
+
+  // The onspeechend property of the SpeechRecognition interface represents
+  // an event handler that will run when speech recognised
+  // by the speech recognition service has stopped being detected
+  // (when the speechend event fires.)
+  //
+  // SpeechRecognitionインターフェイスのonspeechendプロパティは、
+  // 音声認識サービスによって認識された音声が検出されなくなったとき
+  // （Speechendイベントが発生したとき）に実行されるイベントハンドラを表します。
+  set onspeechend(handler: (ev: Event) &#x3D;&gt; any) {
+    this.speechendHandler &#x3D; handler;
+  }
+
+  // The onsoundend property of the SpeechRecognition interface represents
+  // an event handler that will run when any sound
+  // — recognisable speech or not — has stopped being detected
+  // (when the soundend event fires.)
+  //
+  // SpeechRecognitionインターフェイスのonsoundendプロパティは、
+  // サウンド認識可能な音声が検出されなくなったときに実行されるイベントハンドラを表します
+  // （サウンドエンドイベントが発生したとき）。
+  set onsoundend(handler: (ev: Event) &#x3D;&gt; any) {
+    this.soundendHandler &#x3D; handler;
+  }
+
+  // The onaudioend property of the SpeechRecognition interface represents
+  // an event handler that will run
+  // when the user agent has finished capturing audio
+  // (when the audioend event fires.)
+  //
+  // SpeechRecognitionインターフェイスのonaudioendプロパティは、
+  // ユーザーエージェントがオーディオのキャプチャを終了したとき
+  // （オーディオエンドイベントが発生したとき）に実行されるイベントハンドラを表します。
+  set onaudioend(handler: (ev: Event) &#x3D;&gt; any) {
+    this.audioendHandler &#x3D; handler;
+  }
+
+  // The onresult property of the SpeechRecognition interface represents
+  // an event handler that will run
+  // when the speech recognition service returns a result
+  // — a word or phrase has been positively recognized
+  // and this has been communicated back to the app
+  // (when the result event fires.)
+  //
+  // SpeechRecognitionインターフェイスのonresultプロパティは、
+  // 音声認識サービスが結果を返すときに実行されるイベントハンドラを表します。
+  // 単語やフレーズが確実に認識され、結果イベントが発生したときにアプリに返されます。
+  set onresult(handler: (ev: SpeechRecognitionEvent) &#x3D;&gt; any) {
+    this.resultHandler &#x3D; handler;
+  }
+
+  // The onnomatch property of the SpeechRecognition interface represents
+  // an event handler that will run
+  // when the speech recognition service returns
+  // a final result with no significant recognition
+  // (when the nomatch event fires.)
+  //
+  // This may involve some degree of recognition
+  //  which doesn&#x27;t meet or exceed the confidence threshold.
+  //
+  //
+  // SpeechRecognitionインターフェイスのonnomatchプロパティは、
+  // 音声認識サービスが重要な認識なしに（nomatchイベントが発生したとき）
+  // 最終結果を返すときに実行されるイベントハンドラを表します。
+  //
+  // これには、ある程度の認識が必要であり、これは信頼限界を満たさないか、
+  // 超えている。
+  set onnomatch(handler: (ev: SpeechRecognitionEvent) &#x3D;&gt; any) {
+    this.nomatchHandler &#x3D; handler;
+  }
+
+  // The onerror property of the SpeechRecognition interface represents
+  // an event handler that will run
+  // when a speech recognition error occurs
+  // (when the error event fires.)
+  //
+  // SpeechRecognitionインターフェイスのonerrorプロパティは、
+  // 音声認識エラーが発生したとき（エラーイベントが発生したとき）に
+  // 実行されるイベントハンドラを表します。
+  set onerror(handler: (ev: SpeechRecognitionError) &#x3D;&gt; any) {
+    this.errorHandler &#x3D; handler;
+  }
+
+  // The onstart property of the SpeechRecognition interface represents
+  // an event handler that will run when the speech
+  // recognition service has begun listening
+  // to incoming audio with intent to recognize grammars
+  // associated with the current SpeechRecognition
+  // (when the start event fires.)
+  //
+  //
+  // SpeechRecognitionインターフェイスのonstartプロパティは、
+  // 音声認識サービスが現在のSpeechRecognitionに関連付けられている文法を
+  // 認識することを目的として着信オーディオを聴き始めたときに実行される
+  // イベントハンドラを表します（開始イベントが発生したとき）。
+  set onstart(handler: (ev: Event) &#x3D;&gt; any) {
+    this.startHandler &#x3D; handler;
+  }
+
+  // The onend property of the SpeechRecognition interface represents
+  // an event handler that will run when the speech recognition
+  // service has disconnected (when the end event fires.)
+  //
+  // SpeechRecognitionインターフェイスのonendプロパティは、
+  // 音声認識サービスが切断されたとき（終了イベントが発生したとき）に
+  // 実行されるイベントハンドラを表します。
+  set onend(handler: (ev: Event) &#x3D;&gt; any) {
+    this.endHandler &#x3D; handler;
+  }
+
+  // The start() method of the Web Speech API starts the speech recognition service
+  // listening to incoming audio with intent to recognize grammars
+  // associated with the current SpeechRecognition.
+  //
+  // Web Speech APIのstart（）メソッドは、現在のSpeechRecognitionに
+  // 関連付けられた文法を認識することを目的として、
+  // 着信音声を聴取する音声認識サービスを開始します。
+  public start(): void {
+    this.internal.start();
+    this.ref.tick();
+  }
+
+  // The stop() method of the Web Speech API stops the speech recognition service
+  // from listening to incoming audio, and attempts to return a SpeechRecognitionResult
+  // using the audio captured so far.
+  //
+  // Web Speech APIのstop（）メソッドは、音声認識サービスが着信音声を聴取するのを停止し、
+  // これまでに取得した音声を使用してSpeechRecognitionResultを返そうとします。
+  public stop(): void {
+    this.internal.stop();
+    this.ref.tick();
+  }
+
+  // The abort() method of the Web Speech API stops the speech recognition service
+  // from listening to incoming audio, and doesn&#x27;t attempt to return
+  // a SpeechRecognitionResult.
+  //
+  // Web Speech APIのabort（）メソッドは、音声認識サービスが着信オーディオを聴くのをやめ、
+  // SpeechRecognitionResultを返そうとしません。
+  public abort(): void {
+    this.internal.abort();
+    this.ref.tick();
+  }
+
+
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'SpeechRecognitionService.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
