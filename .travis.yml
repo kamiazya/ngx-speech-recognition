@@ -16,6 +16,7 @@ before_install:
 script:
   - yarn
   - yarn lint
+  - yarn build
 
 addons:
   apt:
