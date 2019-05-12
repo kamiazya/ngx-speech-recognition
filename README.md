@@ -3,6 +3,7 @@
 # NgxSpeechRecognition
 
 [![NPM](https://nodei.co/npm/@kamiazya/ngx-speech-recognition.png?downloads=true)](https://nodei.co/npm/@kamiazya/ngx-speech-recognition/)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkamiazya%2Fngx-speech-recognition.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkamiazya%2Fngx-speech-recognition?ref=badge_shield)
 
 Angular 5+ speech recognition service (based on browser implementation such as Chrome).
 
@@ -121,3 +122,6 @@ export class SubComponent { }
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkamiazya%2Fngx-speech-recognition.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkamiazya%2Fngx-speech-recognition?ref=badge_large)
