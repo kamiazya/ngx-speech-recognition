@@ -16,9 +16,10 @@ before_install:
 script:
   - yarn
   - yarn lint
-  - yarn build
+  - yarn build:lib
   - yarn install:lib
   - yarn test:lib:schematics
+  - yarn build:lib:schematics
 
 addons:
   apt:
