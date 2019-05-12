@@ -16,7 +16,7 @@
     "build:lib:schematics": "yarn --cwd projects/ngx-speech-recognition build:schematics",
     "schematics:copy": "cpx \"projects/ngx-speech-recognition/schematics/**/*.{json,d.ts,js,js.map}\" dist/ngx-speech-recognition/schematics",
     "copy": "cpx ./README.md ./dist/ngx-speech-recognition/ && cpx ./speech.gif ./dist/ngx-speech-recognition/ && cpx ./LICENSE ./dist/ngx-speech-recognition/",
-    "install:lib": "yarn --cwd projects/ngx-face-api-js install",
+    "install:lib": "yarn --cwd projects/ngx-speech-recognition install",
     "test": "ng test",
     "test:lib:schematics": "yarn --cwd projects/ngx-speech-recognition test:schematics",
     "lint": "ng lint ngx-speech-recognition",
