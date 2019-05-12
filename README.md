@@ -1,9 +1,8 @@
-[![Build Status](https://travis-ci.com/kamiazya/ngx-speech-recognition.svg?branch=master)](https://travis-ci.com/kamiazya/ngx-speech-recognition) [![Maintainability](https://api.codeclimate.com/v1/badges/08225ee2c02a584dca4f/maintainability)](https://codeclimate.com/github/kamiazya/ngx-speech-recognition/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/08225ee2c02a584dca4f/test_coverage)](https://codeclimate.com/github/kamiazya/ngx-speech-recognition/test_coverage) [![npm version](https://badge.fury.io/js/%40kamiazya%2Fngx-speech-recognition.svg)](https://badge.fury.io/js/%40kamiazya%2Fngx-speech-recognition) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/cd6714ceafe6438abf661fec1c3fe615)](https://www.codacy.com/app/kamiazya/go-dispatcher?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kamiazya/go-dispatcher&amp;utm_campaign=Badge_Grade) [![@kamiazya/ngx-speech-recognition Dev Token](https://badge.devtoken.rocks/@kamiazya/ngx-speech-recognition)](https://devtoken.rocks/package/@kamiazya/ngx-speech-recognition)
+[![Build Status](https://travis-ci.com/kamiazya/ngx-speech-recognition.svg?branch=master)](https://travis-ci.com/kamiazya/ngx-speech-recognition) [![Maintainability](https://api.codeclimate.com/v1/badges/08225ee2c02a584dca4f/maintainability)](https://codeclimate.com/github/kamiazya/ngx-speech-recognition/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/08225ee2c02a584dca4f/test_coverage)](https://codeclimate.com/github/kamiazya/ngx-speech-recognition/test_coverage) [![npm version](https://badge.fury.io/js/%40kamiazya%2Fngx-speech-recognition.svg)](https://badge.fury.io/js/%40kamiazya%2Fngx-speech-recognition) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/cd6714ceafe6438abf661fec1c3fe615)](https://www.codacy.com/app/kamiazya/go-dispatcher?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kamiazya/go-dispatcher&amp;utm_campaign=Badge_Grade) [![@kamiazya/ngx-speech-recognition Dev Token](https://badge.devtoken.rocks/@kamiazya/ngx-speech-recognition)](https://devtoken.rocks/package/@kamiazya/ngx-speech-recognition) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkamiazya%2Fngx-speech-recognition.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkamiazya%2Fngx-speech-recognition?ref=badge_shield)
 
 # NgxSpeechRecognition
 
 [![NPM](https://nodei.co/npm/@kamiazya/ngx-speech-recognition.png?downloads=true)](https://nodei.co/npm/@kamiazya/ngx-speech-recognition/)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkamiazya%2Fngx-speech-recognition.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkamiazya%2Fngx-speech-recognition?ref=badge_shield)
 
 Angular 5+ speech recognition service (based on browser implementation such as Chrome).
 
@@ -123,5 +122,10 @@ export class SubComponent { }
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
-
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkamiazya%2Fngx-speech-recognition.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkamiazya%2Fngx-speech-recognition?ref=badge_large)
+
+## Author
+
+[kamiazya(Yuki Yamazaki)](https://github.com/kamiazya)
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W5VDNO)
