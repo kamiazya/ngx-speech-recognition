@@ -5,7 +5,7 @@ import { getWorkspace } from '@schematics/angular/utility/config';
 import { getProjectFromWorkspace, getProjectMainFile } from '@angular/cdk/schematics';
 import { getAppModulePath } from '@schematics/angular/utility/ng-ast-utils';
 // tslint:disable-next-line:max-line-length
-import { NGX_SPEECH_RECOGNITION_PACKAGE_NAME, NGX_SPEECH_RECOGNITION_VERSION, NGX_SPEECH_RECOGNITION_MODULE_NAME } from '../package-setting';
+import { NGX_SPEECH_RECOGNITION_PACKAGE_NAME, NGX_SPEECH_RECOGNITION_MODULE_NAME } from '../util/package-setting';
 
 
 const collectionPath = path.join(__dirname, '../collection.json');
@@ -35,20 +35,20 @@ function createTestApp(appOptions: any = { }): UnitTestTree {
 }
 
 describe('ngx-face-api-js-schematics', () => {
-  it('addDependencies works', () => {
+  it('addDependencies works', async () => {
     const runner = new SchematicTestRunner('schematics', collectionPath);
-    const tree = runner.runSchematic('ng-add', {}, createTestApp());
+    const tree = await runner.runSchematicAsync('ng-add', {}, createTestApp()).toPromise();
 
     expect(tree.files).toContain('/package.json');
 
     const packageJson = JSON.parse(getFileContent(tree, '/package.json'));
 
-    expect(packageJson.dependencies[NGX_SPEECH_RECOGNITION_PACKAGE_NAME]).toBe(NGX_SPEECH_RECOGNITION_VERSION);
+    expect(Object.keys(packageJson.dependencies)).toContain(NGX_SPEECH_RECOGNITION_PACKAGE_NAME);
   });
 
-  it('addNgxFaceApiJsModule works', () => {
+  it('addNgxFaceApiJsModule works', async () => {
     const runner = new SchematicTestRunner('schematics', collectionPath);
-    const tree = runner.runSchematic('ng-add', {}, createTestApp());
+    const tree = await runner.runSchematicAsync('ng-add', {}, createTestApp()).toPromise();
 
     const workspace = getWorkspace(tree);
     const project = getProjectFromWorkspace(workspace);
