@@ -1,6 +1,6 @@
 {
   "name": "@kamiazya/ngx-speech-recognition",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "description": "Angular 5+ speech recognition service (based on browser implementation such as Chrome).",
   "license": "MIT",
   "author": "kamiazya <yuki@kamiazya.tech>",
