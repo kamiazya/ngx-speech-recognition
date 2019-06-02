@@ -50,135 +50,55 @@ export class SpeechRecognitionModule {
     }
   }
 
-  static buildProvidersFromConfig(config: SpeechRecognitionConfig): Provider[] {
-    const providers: Provider[] = [];
-    if (config.grammars !== undefined && config.grammars != null) {
-      providers.push({
-        useValue: config.grammars,
-        provide: SpeechRecognitionGrammars,
-      });
-    }
-    if (config.lang !== undefined && config.lang != null) {
-      providers.push({
-        useValue: config.lang,
-        provide: SpeechRecognitionLang,
-      });
-    }
-    if (config.continuous !== undefined && config.continuous != null) {
-      providers.push({
-        useValue: config.continuous,
-        provide: SpeechRecognitionContinuous,
-      });
-    }
-    if (config.interimResults !== undefined && config.interimResults != null) {
-      providers.push({
-        useValue: config.interimResults,
-        provide: SpeechRecognitionInterimResults,
-      });
-    }
-    if (config.maxAlternatives !== undefined && config.maxAlternatives != null) {
-      providers.push({
-        useValue: config.maxAlternatives,
-        provide: SpeechRecognitionMaxAlternatives,
-      });
-    }
-    if (config.serviceURI !== undefined && config.serviceURI != null) {
-      providers.push({
-        useValue: config.serviceURI,
-        provide: SpeechRecognitionServiceUri,
-      });
-    }
-    if (typeof config.onaudiostart === 'function') {
-      providers.push({
-        useValue: config.onaudiostart,
-        provide: SpeechRecognitionAudiostartHandler,
-      });
-    }
-    if (typeof config.onsoundstart === 'function') {
-      providers.push({
-        useValue: config.onsoundstart,
-        provide: SpeechRecognitionSoundstartHandler,
-      });
-    }
-    if (typeof config.onspeechstart === 'function') {
-      providers.push({
-        useValue: config.onspeechstart,
-        provide: SpeechRecognitionSpeechstartHandler,
-      });
-    }
-    if (typeof config.onspeechend === 'function') {
-      providers.push({
-        useValue: config.onspeechend,
-        provide: SpeechRecognitionSpeechendHandler,
-      });
-    }
-    if (typeof config.onsoundend === 'function') {
-      providers.push({
-        useValue: config.onsoundend,
-        provide: SpeechRecognitionSoundendHandler,
-      });
-    }
-    if (typeof config.onaudioend === 'function') {
-      providers.push({
-        useValue: config.onaudioend,
-        provide: SpeechRecognitionAudioendHandler,
-      });
-    }
-    if (typeof config.onresult === 'function') {
-      providers.push({
-        useValue: config.onresult,
-        provide: SpeechRecognitionResultHandler,
-      });
-    }
-    if (typeof config.onnomatch === 'function') {
-      providers.push({
-        useValue: config.onnomatch,
-        provide: SpeechRecognitionNomatchHandler,
-      });
-    }
-    if (typeof config.onerror === 'function') {
-      providers.push({
-        useValue: config.onerror,
-        provide: SpeechRecognitionErrorHandler,
-      });
-    }
-    if (typeof config.onstart === 'function') {
-      providers.push({
-        useValue: config.onstart,
-        provide: SpeechRecognitionStartHandler,
-      });
-    }
-    if (typeof config.onend === 'function') {
-      providers.push({
-        useValue: config.onend,
-        provide: SpeechRecognitionEndHandler,
-      });
-    }
-
-    return providers;
-  }
-
-
   static forRoot(config: SpeechRecognitionConfig): ModuleWithProviders {
-    const providers: Provider[] = SpeechRecognitionModule.buildProvidersFromConfig(config);
-    providers.push({
-      useClass: SpeechRecognitionService,
-      provide: SpeechRecognitionService,
-    });
-    providers.push({
-      useClass: RxSpeechRecognitionService,
-      provide: RxSpeechRecognitionService,
-    });
     return {
       ngModule: SpeechRecognitionModule,
-      providers: providers,
+      providers: [
+        ...(config.grammars !== undefined && config.grammars != null ? [{ useValue: config.grammars, provide: SpeechRecognitionGrammars }] : []),
+        ...(config.lang !== undefined && config.lang != null ? [{ useValue: config.lang, provide: SpeechRecognitionLang }] : []),
+        ...(config.continuous !== undefined && config.continuous != null ? [{ useValue: config.continuous, provide: SpeechRecognitionContinuous }] : []),
+        ...(config.interimResults !== undefined && config.interimResults != null ? [{ useValue: config.interimResults, provide: SpeechRecognitionInterimResults }] : []),
+        ...(config.maxAlternatives !== undefined && config.maxAlternatives != null ? [{ useValue: config.maxAlternatives, provide: SpeechRecognitionMaxAlternatives }] : []),
+        ...(config.serviceURI !== undefined && config.serviceURI != null ? [{ useValue: config.serviceURI, provide: SpeechRecognitionServiceUri }] : []),
+        ...(config.onaudiostart instanceof Function ? [{ useValue: config.onaudiostart, provide: SpeechRecognitionAudiostartHandler }] : []),
+        ...(config.onsoundstart instanceof Function ? [{ useValue: config.onsoundstart, provide: SpeechRecognitionSoundstartHandler }] : []),
+        ...(config.onspeechstart instanceof Function ? [{ useValue: config.onspeechstart, provide: SpeechRecognitionSpeechstartHandler }] : []),
+        ...(config.onspeechend instanceof Function ? [{ useValue: config.onspeechend, provide: SpeechRecognitionSpeechendHandler }] : []),
+        ...(config.onsoundend instanceof Function ? [{ useValue: config.onsoundend, provide: SpeechRecognitionSoundendHandler }] : []),
+        ...(config.onaudioend instanceof Function ? [{ useValue: config.onaudioend, provide: SpeechRecognitionAudioendHandler }] : []),
+        ...(config.onresult instanceof Function ? [{ useValue: config.onresult, provide: SpeechRecognitionResultHandler }] : []),
+        ...(config.onnomatch instanceof Function ? [{ useValue: config.onnomatch, provide: SpeechRecognitionNomatchHandler }] : []),
+        ...(config.onerror instanceof Function ? [{ useValue: config.onerror, provide: SpeechRecognitionErrorHandler }] : []),
+        ...(config.onstart instanceof Function ? [{ useValue: config.onstart, provide: SpeechRecognitionStartHandler }] : []),
+        ...(config.onend instanceof Function ? [{ useValue: config.onend, provide: SpeechRecognitionEndHandler }] : []),
+        { useClass: SpeechRecognitionService, provide: SpeechRecognitionService },
+        { useClass: RxSpeechRecognitionService, provide: RxSpeechRecognitionService }
+      ],
     };
   }
 
   static withConfig(config: SpeechRecognitionConfig): ModuleWithProviders {
     return {
       ngModule: SpeechRecognitionModule,
-      providers: SpeechRecognitionModule.buildProvidersFromConfig(config),
-    };
-  }
+      providers: [
+        ...(config.grammars !== undefined && config.grammars != null ? [{ useValue: config.grammars, provide: SpeechRecognitionGrammars }] : []),
+        ...(config.lang !== undefined && config.lang != null ? [{ useValue: config.lang, provide: SpeechRecognitionLang }] : []),
+        ...(config.continuous !== undefined && config.continuous != null ? [{ useValue: config.continuous, provide: SpeechRecognitionContinuous }] : []),
+        ...(config.interimResults !== undefined && config.interimResults != null ? [{ useValue: config.interimResults, provide: SpeechRecognitionInterimResults }] : []),
+        ...(config.maxAlternatives !== undefined && config.maxAlternatives != null ? [{ useValue: config.maxAlternatives, provide: SpeechRecognitionMaxAlternatives }] : []),
+        ...(config.serviceURI !== undefined && config.serviceURI != null ? [{ useValue: config.serviceURI, provide: SpeechRecognitionServiceUri }] : []),
+        ...(config.onaudiostart instanceof Function ? [{ useValue: config.onaudiostart, provide: SpeechRecognitionAudiostartHandler }] : []),
+        ...(config.onsoundstart instanceof Function ? [{ useValue: config.onsoundstart, provide: SpeechRecognitionSoundstartHandler }] : []),
+        ...(config.onspeechstart instanceof Function ? [{ useValue: config.onspeechstart, provide: SpeechRecognitionSpeechstartHandler }] : []),
+        ...(config.onspeechend instanceof Function ? [{ useValue: config.onspeechend, provide: SpeechRecognitionSpeechendHandler }] : []),
+        ...(config.onsoundend instanceof Function ? [{ useValue: config.onsoundend, provide: SpeechRecognitionSoundendHandler }] : []),
+        ...(config.onaudioend instanceof Function ? [{ useValue: config.onaudioend, provide: SpeechRecognitionAudioendHandler }] : []),
+        ...(config.onresult instanceof Function ? [{ useValue: config.onresult, provide: SpeechRecognitionResultHandler }] : []),
+        ...(config.onnomatch instanceof Function ? [{ useValue: config.onnomatch, provide: SpeechRecognitionNomatchHandler }] : []),
+        ...(config.onerror instanceof Function ? [{ useValue: config.onerror, provide: SpeechRecognitionErrorHandler }] : []),
+        ...(config.onstart instanceof Function ? [{ useValue: config.onstart, provide: SpeechRecognitionStartHandler }] : []),
+        ...(config.onend instanceof Function ? [{ useValue: config.onend, provide: SpeechRecognitionEndHandler }] : []),
+      ]
+    }
+  };
 }
