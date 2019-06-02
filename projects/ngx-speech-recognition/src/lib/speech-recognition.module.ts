@@ -1,7 +1,6 @@
 import {
   NgModule,
   ModuleWithProviders,
-  Provider,
   Inject,
   PLATFORM_ID,
 } from '@angular/core';
@@ -54,6 +53,7 @@ export class SpeechRecognitionModule {
     return {
       ngModule: SpeechRecognitionModule,
       providers: [
+        // tslint:disable:max-line-length
         ...(config.grammars !== undefined && config.grammars != null ? [{ useValue: config.grammars, provide: SpeechRecognitionGrammars }] : []),
         ...(config.lang !== undefined && config.lang != null ? [{ useValue: config.lang, provide: SpeechRecognitionLang }] : []),
         ...(config.continuous !== undefined && config.continuous != null ? [{ useValue: config.continuous, provide: SpeechRecognitionContinuous }] : []),
@@ -81,6 +81,7 @@ export class SpeechRecognitionModule {
     return {
       ngModule: SpeechRecognitionModule,
       providers: [
+        // tslint:disable:max-line-length
         ...(config.grammars !== undefined && config.grammars != null ? [{ useValue: config.grammars, provide: SpeechRecognitionGrammars }] : []),
         ...(config.lang !== undefined && config.lang != null ? [{ useValue: config.lang, provide: SpeechRecognitionLang }] : []),
         ...(config.continuous !== undefined && config.continuous != null ? [{ useValue: config.continuous, provide: SpeechRecognitionContinuous }] : []),
@@ -99,6 +100,6 @@ export class SpeechRecognitionModule {
         ...(config.onstart instanceof Function ? [{ useValue: config.onstart, provide: SpeechRecognitionStartHandler }] : []),
         ...(config.onend instanceof Function ? [{ useValue: config.onend, provide: SpeechRecognitionEndHandler }] : []),
       ]
-    }
-  };
+    };
+  }
 }
