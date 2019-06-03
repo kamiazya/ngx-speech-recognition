@@ -4,7 +4,7 @@ import {
   SpeechRecognitionContinuous,
   SpeechRecognitionInterimResults,
   SpeechRecognitionMaxAlternatives,
-} from './service';
+} from './service/speech-recognition.token';
 
 // tslint:disable-next-line:class-name
 export const SPEECH_RECOGNITION_DEFAULT: Provider[] = [

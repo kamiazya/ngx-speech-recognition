@@ -27,9 +27,14 @@ import {
   SpeechRecognitionErrorHandler,
   SpeechRecognitionStartHandler,
   SpeechRecognitionEndHandler,
-  SpeechRecognitionService,
+} from './service/speech-recognition.token';
+
+import {
   RxSpeechRecognitionService,
-} from './service';
+} from './service/rx-speech-recognition.service';
+import {
+  SpeechRecognitionService,
+} from './service/speech-recognition.service';
 
 import { SpeechRecognitionConfig } from './speech-recognition.config';
 import { SPEECH_RECOGNITION_DEFAULT } from './speech-recognition.provider';
