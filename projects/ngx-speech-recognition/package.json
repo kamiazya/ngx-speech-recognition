@@ -19,16 +19,16 @@
     "url": "https://github.com/kamiazya/ngx-speech-recognition.git"
   },
   "peerDependencies": {
-    "@angular/common": "^7.2.0",
-    "@angular/core": "^7.2.0"
+    "@angular/common": "^8.0.0",
+    "@angular/core": "^8.0.0"
   },
   "dependencies": {
-    "@angular/cdk": "^7.2.0"
+    "@angular/cdk": "^8.0.0"
   },
   "devDependencies": {
     "@angular-devkit/core": "^7.3.9",
     "@angular-devkit/schematics": "^7.3.9",
-    "@angular/cdk": "^7.2.0",
+    "@angular/cdk": "^8.0.0",
     "@types/jasmine": "^3.3.12",
     "@types/node": "^12.0.0",
     "jasmine": "^3.4.0",
