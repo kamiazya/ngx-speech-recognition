@@ -26,7 +26,7 @@
     "@angular/cdk": "^7.2.0"
   },
   "devDependencies": {
-    "@angular-devkit/core": "^7.3.9",
+    "@angular-devkit/core": "^9.1.4",
     "@angular-devkit/schematics": "^7.3.9",
     "@angular/cdk": "^7.2.0",
     "@types/jasmine": "^3.3.12",
