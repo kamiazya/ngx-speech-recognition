@@ -70,6 +70,6 @@
     "tslib": "^1.10.0",
     "tslint": "^5.18.0",
     "typescript": "3.2",
-    "webpack": "^4.39.1"
+    "webpack": "^4.44.1"
   }
 }
