@@ -38,7 +38,7 @@
     "@angular/router": "^7.2.10",
     "@ngtools/webpack": "7.3.9",
     "core-js": "^3.2.0",
-    "rxjs": "^6.4.0",
+    "rxjs": "^6.6.6",
     "rxjs-compat": "^6.4.0",
     "zone.js": "^0.8.29"
   },
