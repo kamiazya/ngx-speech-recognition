@@ -30,7 +30,7 @@
     "@angular-devkit/schematics": "^7.3.9",
     "@angular/cdk": "^7.2.0",
     "@types/jasmine": "^3.3.12",
-    "@types/node": "^12.0.0",
+    "@types/node": "^15.12.2",
     "jasmine": "^3.4.0",
     "typescript": "^3.4.5"
   },
